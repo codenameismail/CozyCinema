@@ -22,6 +22,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = async ({
 
   // if the player url is not ready yet, show a loading spinner
   if (!playerUrl) {
+    console.log("No Player url Found");
     return <LoadingSpinner />;
   }
 

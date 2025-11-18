@@ -20,10 +20,11 @@ export async function getVideoPlayerUrl(
   const requestUrl = `https://getsuperembed.link/?video_id=${videoId}&tmdb=${isTmdb}&season=${season}&episode=${episode}&player_font=${playerSettings.playerFont}&player_bg_color=${playerSettings.playerBgColor}&player_font_color=${playerSettings.playerFontColor}&player_primary_color=${playerSettings.playerPrimaryColor}&player_secondary_color=${playerSettings.playerSecondaryColor}&player_loader=${playerSettings.playerLoader}&preferred_server=${playerSettings.preferredServer}&player_sources_toggle_type=${playerSettings.playerSourcesToggleType}`;
 
   try {
+    // console.log("Fetching video at: ", requestUrl);
     const response = await fetch(requestUrl);
     const playerUrl = await response.text();
     if (playerUrl.startsWith("https://")) {
-      // console.log(`videoId: ${videoId}, playerUrl: ${playerUrl}`);
+      console.log(`videoId: ${videoId}, playerUrl: ${playerUrl}`);
 
       return playerUrl;
     } else {
